@@ -45,4 +45,4 @@ jobs:
           # Push is a shorthand for --output=type=registry
           push: true # optional, default is false
           # List of tags
-          tags: radiergummi/matchory-libpostal:latest radiergummi/matchory-libpostal:$GITHUB_SHA
+          tags: radiergummi/matchory-libpostal:latest
