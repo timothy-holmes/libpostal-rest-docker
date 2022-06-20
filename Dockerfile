@@ -37,8 +37,6 @@ RUN set -eux; \
         /usr/src/libpostal \
     ; \
     cd /usr/src/libpostal; \
-                            git fetch origin b0c1c75209b1aa877101e32e4ef58783cd20151d; \
-                            git reset --hard FETCH_HEAD; \
     ./bootstrap.sh; \
     mkdir --parents /opt/libpostal_data; \
     ./configure --datadir=/opt/data --prefix=/libpostal; \
@@ -82,6 +80,6 @@ COPY --from=builder /libpostal/lib/* /usr/lib/
 COPY --from=builder /libpostal/include/* /usr/lib/
 COPY --from=builder /opt/data /opt/data
 
-EXPOSE 8080
-EXPOSE 8090
-CMD libpostal-rest
+EXPOSE 8080/tcp
+EXPOSE 8090/tcp
+CMD ["/usr/bin/libpostal-rest"]
