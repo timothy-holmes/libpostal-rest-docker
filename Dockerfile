@@ -37,8 +37,8 @@ RUN set -eux; \
         /usr/src/libpostal \
     ; \
     cd /usr/src/libpostal; \
-              #              git fetch origin b0c1c75209b1aa877101e32e4ef58783cd20151d; \
-              #              git reset --hard FETCH_HEAD; \
+                            git fetch origin b0c1c75209b1aa877101e32e4ef58783cd20151d; \
+                            git reset --hard FETCH_HEAD; \
     ./bootstrap.sh; \
     mkdir --parents /opt/libpostal_data; \
     ./configure --datadir=/opt/data --prefix=/libpostal; \
